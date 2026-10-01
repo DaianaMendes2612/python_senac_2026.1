@@ -58,8 +58,11 @@
             <div class="col-9">
                 MENU PRINCIPAL
             </div>
-            <div class="col-3">
-                LOGIN/LOGOUT
+
+            <!--LOGIN/LOGOUT-->
+            <div class="col-3 text-end pe-4">
+                <a href="" target="_blank"><i class="fa-solid fa-right-to-bracket" title="Clique aqui para fazer o LOGIN"></i></a>
+                <a href="" target="_blank"><i class="fa-solid fa-right-from-bracket" title="Clique aqui para fazer o LOGOUT"></i></a>
             </div>
         </div>
         
@@ -82,31 +85,60 @@
             <div class="m-3">
             <label class="form-label" for="login">Login/E-mail:</label>
             <input class="form-control" type="email" id="login" name="login" required placeholder="seu login" title="Informe o seu login ou endereço de E-mail(campo obrigatório)">
-            </div>
 
+
+            </div>
             <!--SENHA-->
-            <div class="m-3">
-            <label class="form-label" for="senha">Senha:</label>
-            <input class="form-control" type="password" id="senha" name="senha" required placeholder="sua senha" title="Informe a sua senha(campo obrigatório)" minlength="6">
-            </div>
-
+            <div class="m-2 row">
+                <div class="col-6">
+                    <label class="form-label" for="senha">Senha:</label>
+                    <input class="form-control" type="password" id="senha" name="senha" required placeholder="sua senha" 
+                    title="Informe a sua senha(campo obrigatório)" minlength="6">
+                </div>
 
             <!-- CONFIRMAR SENHA-->
-            <div class="m-3">
-            <label class="form-label" for="conf_senha">Confirmar Senha:</label>
-            <input class="form-control" type="password" id="conf_senha" name="conf_senha" required placeholder="Confirme a sua senha" title="Confirme a sua senha(campo obrigatório)" minlength="6">
+                <div class="col-6">
+                    <label class="form-label" for="conf_senha">Confirmar Senha:</label>
+                    <input class="form-control" type="password" id="conf_senha" name="conf_senha" required placeholder="Confirme a sua senha" 
+                    title="Confirme a sua senha(campo obrigatório)" minlength="6">
+                </div>
+                
+            </div>
+
+             <!--DATA DE NASCIMENTO-->
+            <div class="m-3 row">
+                <div class="col-6">
+                    <label class="form-label" for="nascimento">Data de Nascimento:</label>
+                    <input class="form-control" type="date" id="nascimento" name="nascimento" required placeholder="sua data de nascimento" 
+                    title="Informe a sua data de nascimento(campo obrigatório)" minlength="6">
+                </div>
+
+            <!-- SEXO-->
+                <div class="col-6">
+                    <label class="form-label" for="sexo">Sexo:</label>
+                    <select class="form-select" id="sexo" name="sexo" required title="Selecione o seu sexo (campo obrigatório)">
+                        <option value="" disabled selected hidden>Selecione uma opção</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outro">Outro</option>
+                        <option value="Prefiro nao responder">Prefiro não responder</option>
+                    </select>
+                </div>
+                
             </div>
 
             <!-- CPF-->
             <div class="m-3">
             <label class="form-label" for="cpf">CPF do Parceiro:</label>
-            <input class="form-control" type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite o CPF no formato obrigatório: 000.000.000-00" placeholder="000.000.000-00">
+            <input class="form-control" type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+            title="Digite o CPF no formato obrigatório: 000.000.000-00" placeholder="000.000.000-00">
             </div>
 
              <!-- TELEFONE-->
             <div class="m-3">
             <label class="form-label" for="telefone">TELEFONE:</label>
-            <input class="form-control" type="text" id="telefone" name="telefone" required placeholder="Informe o seu telefone" title="Informe o seu Telefone(campo obrigatório)">
+            <input class="form-control" type="tel" id="telefone" name="telefone" required placeholder="Informe o seu telefone" 
+            title="Informe o seu Telefone(campo obrigatório)">
             </div>
 
             <!-- CEP-->
@@ -178,10 +210,13 @@
                 Copyright
                 
             </div>
-            <div class="col-3">
-                <a href="" target="_blank"><i class="bi bi-github" title="Acesse o nosso GITHUB"></i></a>
-                <a href="" target="_blank"><i class="bi bi-youtube" title="Acesse o nosso canal no YOUTUBE"></i></a>
-                <a href="" target="_blank"><i class="bi bi-facebook" title="Acesse o nossa Página no Facebook"></i></a>
+            <div class="col-3 text-end pe-4" >
+                <a href="https://github.com/" target="_blank"><i class="fa-brands fa-square-github" title="Acesse o nosso GITHUB"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube" title="Acesse o nosso canal no YOUTUBE"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" title="Acesse a nossa Página no Facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" title="Acesse o nosso Instagram"></i></a>
+                <a href="https://x.com/?lang=pt" target="_blank"><i class="fa-brands fa-square-twitter" title="Acesse o nosso Twitter"></i></a>
+                <a href="https://www.threads.com/?hl=pt-br" target="_blank"><i class="fa-brands fa-threads" title="Acesse o nosso Threads"></i></a>
             </div>
         </div>
     </footer>

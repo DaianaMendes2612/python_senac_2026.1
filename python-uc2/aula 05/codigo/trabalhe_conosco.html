@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Inicio do Head-->
+<head>  
+    <title>[MUDAR]</title>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="description" content="[MUDAR]">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+        .adicionar_borda {
+           border-width: 1px;
+           border-style: solid;
+           border-color: black;            
+        }
+    </style>
+
+</head>
+<!-- Final do Head-->
+
+<!-- Inicio do Body -->
+<body class="bg-secondary">
+<!-- 
+    DIV - Prinicipal
+    Area principal do site contem o 
+        - Header
+        - Main 
+        - Footer
+ -->
+<div id="div_principal" class="container adicionar_borda bg-light">
+    <!--
+        Header da pagina 
+        [-] Logotipo 
+        [-] Titulo
+        [-] Menu Principal
+        [-] Login / Logout / Criar conta
+    -->
+    <header class="adicionar_borda bg-light">
+        <div class="row">
+            <div class="col-12">
+                LOGO/TITULO
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-9">
+                TRABALHE CONOSCO
+            </div>
+
+ <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="produtos.html">Loja</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="blog.html">Blog</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex">
+        <a href="" target="_blank"><i class="fa-solid fa-right-to-bracket me-3" title="Clique aqui para fazer o LOGIN" ></i></a>
+        <a href="" target="_blank"><i class="fa-solid fa-right-from-bracket me-3" title="Clique aqui para fazer o LOGOUT"></i></a>
+        <a href="" target="_blank"><i class="fa-solid fa-pen-to-square me-" title="Clique aqui para CRIAR USUÁRIO"></i></a>
+        
+      </form>
+    </div>
+  </div>
+</nav>
+     
+    </header>
+
+    <!-- 
+        Main da pagina 
+    -->
+    <main class="adicionar_borda bg-light">
+        <!--FORMULARIO DE CADASTRO-->
+        <form action="\cadastro" method="get" target="blank">
+
+            <!--NOME COMPLETO-->
+            <div class="m-3">
+            <label class="form-label" for="name">Nome Completo:</label>
+            <input class="form-control" type="text" id="nome" name="nome" required placeholder="Seu Nome Completo" title="Informe o seu nome completo(campo obrigatório)">
+            </div>
+
+            <!--E- MAIL-->
+            <div class="m-3">
+            <label class="form-label" for="email">E-mail:</label>
+            <input class="form-control" type="email" id="email" name="email" required placeholder="exemplo@email.com" title="Informe o seu endereço de E-mail(campo obrigatório)">
+            </div>
+
+
+              <!--ESTADO-->
+            <div class="m-3">
+            <label class="form-label" for="estado">Estado:</label>
+            <select class="form-select" id="estado" name="estado" required title="Selecione o seu Estado (campo obrigatório)">
+                <option value="" disabled selected>Selecione o estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                 <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                 <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+             <!--CURRICULO-->
+            <div class="m-3">
+            <label class="form-label" for="curriculo">Currículo:</label>
+            <input class="form-control" type="file" id="curriculo" name="curriculo" required accept=".pdf,.doc,.docx" 
+            title="Faça o upload do seu currículo (campo obrigatório)">
+            </div>
+
+            <!--Botões-->
+            <div class="m-3 row">
+                <div class="col-6">
+                    <button type="submit" class="form-control btn btn-outline-primary">
+                        Enviar
+                    </button>
+                </div>
+
+                <div class="col-6">
+                    <button type="reset" class="form-control btn btn-outline-warning">
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </main>
+
+    <!--
+        Footer da pagina 
+        [-] Menu Secundário
+        [-] Contato
+        [-] Copyright do site
+        [-] Redes Sociais
+    -->
+    <footer class="adicionar_borda bg-light">
+        <div class="row">
+            <div class="col-4">
+                MENU SECUNDÁRIO
+            </div>
+
+            <div class="col-5">
+                CONTATO<br>
+                Copyright
+                
+            </div>
+            <div class="col-3 text-end pe-4" >
+                <a href="https://github.com/" target="_blank"><i class="fa-brands fa-square-github" title="Acesse o nosso GITHUB"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube" title="Acesse o nosso canal no YOUTUBE"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" title="Acesse a nossa Página no Facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" title="Acesse o nosso Instagram"></i></a>
+                <a href="https://x.com/?lang=pt" target="_blank"><i class="fa-brands fa-square-twitter" title="Acesse o nosso Twitter"></i></a>
+                <a href="https://www.threads.com/?hl=pt-br" target="_blank"><i class="fa-brands fa-threads" title="Acesse o nosso Threads"></i></a>
+            </div>
+        </div>
+    </footer>
+</div> 
+<!-- Final da Div Principal-->   
+
+<!-- Não apague a tag "SCRIPT" -->
+<!-- Bootstrap JS e dependências -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+<!-- Não apague a tag "SCRIPT" -->
+</body>
+<!-- Final do Body-->
+</html>
