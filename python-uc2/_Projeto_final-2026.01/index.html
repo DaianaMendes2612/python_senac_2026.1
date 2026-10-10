@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <title>BookMaker - Livraria Online</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Luis Rodrigo">
+
+    <meta name="description"
+        content="BookMaker - Sua livraria online. Encontre livros de ficção, romance, tecnologia, negócios e muito mais.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+    <style>
+
+        body {
+            background-color: #f8f6f2;
+        }
+
+        /* Navbar */
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand i {
+            color: #f4b942;
+        }
+
+        /* Barra de busca */
+
+        .search-box {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Banner */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(33, 37, 41, 0.75),
+                    rgba(33, 37, 41, 0.75)
+                ),
+                url("https://images.unsplash.com/photo-1507842217343-583bb7270b66")
+                center/cover;
+
+            min-height: 380px;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Categorias */
+
+        .category-card {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            color: #f4b942;
+        }
+
+        /* Cards dos livros */
+
+        .book-card {
+            transition: 0.3s;
+            border: none;
+            overflow: hidden;
+        }
+
+        .book-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .book-card img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .book-title {
+            font-weight: bold;
+            min-height: 48px;
+        }
+
+        .author {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #198754;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Avaliação */
+
+        .stars {
+            color: #f4b942;
+        }
+
+        /* Promoção */
+
+        .promotion {
+            background-color: #212529;
+            color: white;
+            border-radius: 12px;
+        }
+
+        /* Newsletter */
+
+        .newsletter {
+            background-color: #f4b942;
+        }
+
+        /* Footer */
+
+        footer a {
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
+
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <!-- Logo -->
+
+            <a class="navbar-brand" href="index.html">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                BookMaker
+
+            </a>
+
+
+            <!-- Botão mobile -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarPrincipal"
+                aria-controls="navbarPrincipal"
+                aria-expanded="false"
+                aria-label="Abrir menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse"
+                id="navbarPrincipal">
+
+
+                <!-- Menu -->
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                            href="index.html">
+
+                            Início
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="produtos-list.html">
+
+                            Livros
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="promocoes.html">
+
+                            Promoções
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="blog.html">
+
+                            Blog
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="sobre.html">
+
+                            Sobre
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- Busca -->
+
+                <form class="d-flex search-box me-3"
+                    role="search">
+
+                    <input
+                        class="form-control form-control-sm"
+                        type="search"
+                        placeholder="Buscar livro ou autor..."
+                        aria-label="Buscar">
+
+                    <button
+                        class="btn btn-warning ms-1"
+                        type="submit">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Ícones -->
+
+                <div class="d-flex align-items-center">
+
+
+                    <a href="perfil.html"
+                        class="text-white fs-5 me-3"
+                        title="Meu perfil">
+
+                        <i class="fa-regular fa-circle-user"></i>
+
+                    </a>
+
+
+                    <a href="favoritos.html"
+                        class="text-white fs-5 me-3"
+                        title="Favoritos">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </a>
+
+
+                    <a href="carrinho.html"
+                        class="text-white fs-5 me-3"
+                        title="Carrinho">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                    </a>
+
+
+                    <a href="auth/login"
+                        class="btn btn-outline-light btn-sm">
+
+                        Entrar
+
+                    </a>
+
+                    
+                    <a href="cadastro-bs.html"
+                        class="btn btn-outline-light btn-sm">
+
+                        Cadastro
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-7">
+
+                <h1>
+                    Encontre sua próxima grande história.
+                </h1>
+
+                <p class="my-4">
+
+                    Descubra livros incríveis, novos autores
+                    e histórias que vão acompanhar você
+                    em todos os momentos.
+
+                </p>
+
+
+                <a href="produtos-list.html"
+                    class="btn btn-warning btn-lg me-2">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Explorar livros
+
+                </a>
+
+
+                <a href="quiz.html"
+                    class="btn btn-outline-light btn-lg">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Encontre seu livro
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- CATEGORIAS -->
+<!-- ===================================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2>
+                Explore por categoria
+            </h2>
+
+            <a href="categorias.html"
+                class="text-dark">
+
+                Ver todas
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="row g-3">
+
+
+            <!-- Romance -->
+
+            <div class="col-6 col-md-3">
+
+                <a href="categoria-romance.html"
+                    class="text-decoration-none text-dark">
+
+                    <div class="card category-card text-center shadow-sm">
+
+                        <div class="card-body">
+
+                            <div class="category-icon mb-2">
+
+                                <i class="fa-solid fa-heart"></i>
+
+                            </div>
+
+                            <h5>Emponderamento Feminino</h5>
+
+                            <p class="text-muted mb-0">
+
+                                Descubra a força, a intuição e a liberdade que existem em cada mulher.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- Ficção -->
+
+            <div class="col-6 col-md-3">
+
+                <a href="categoria-ficcao.html"
+                    class="text-decoration-none text-dark">
+
+                    <div class="card category-card text-center shadow-sm">
+
+                        <div class="card-body">
+
+                            <div class="category-icon mb-2">
+
+                                <i class="fa-solid fa-dragon"></i>
+
+                            </div>
+
+                            <h5>Política e Cidadania</h5>
+
+                            <p class="text-muted mb-0">
+
+                                Explore as obras que moldaram o Brasil moderno e entenda os caminhos da nossa democracia. 
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- Tecnologia -->
+
+            <div class="col-6 col-md-3">
+
+                <a href="categoria-tecnologia.html"
+                    class="text-decoration-none text-dark">
+
+                    <div class="card category-card text-center shadow-sm">
+
+                        <div class="card-body">
+
+                            <div class="category-icon mb-2">
+
+                                <i class="fa-solid fa-laptop-code"></i>
+
+                            </div>
+
+                            <h5>Tecnologia e Inovação</h5>
+
+                            <p class="text-muted mb-0">
+
+                                Conecte-se com as tendências que estão redesenhando o mundo e transformando o amanhã. 
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- Negócios -->
+
+            <div class="col-6 col-md-3">
+
+                <a href="categoria-negocios.html"
+                    class="text-decoration-none text-dark">
+
+                    <div class="card category-card text-center shadow-sm">
+
+                        <div class="card-body">
+
+                            <div class="category-icon mb-2">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                            </div>
+
+                            <h5>Finanças e Investimentos</h5>
+
+                            <p class="text-muted mb-0">
+
+                                Assuma o controle da sua vida financeira e construa o caminho para a sua liberdade. 
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- MAIS VENDIDOS -->
+<!-- ===================================================== -->
+
+<section class="py-5 bg-white">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+
+                <h2>
+                    Mais vendidos
+                </h2>
+
+                <p class="text-muted mb-0">
+
+                    Os livros favoritos dos nossos leitores.
+
+                </p>
+
+            </div>
+
+
+            <a href="produtos-list.html"
+                class="btn btn-outline-dark">
+
+                Ver todos
+
+            </a>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- LIVRO 01 -->
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="card book-card h-100 shadow-sm">
+
+
+                    <a href="mulheres_lobos.html">
+
+                        <img
+                            src="C:\SENAC\python_senac_2026.1\python-uc2\_Projeto_final-2026.01\img\Livros\mulheres_lobo.jpg"
+                            class="card-img-top"
+                            alt="Mulheres que correm com os lobos">
+
+                    </a>
+
+
+                    <div class="card-body">
+
+                        <div class="stars mb-2">
+
+                            ★★★★★
+
+                            <small class="text-muted">
+                                (128)
+                            </small>
+
+                        </div>
+
+
+                        <h5 class="book-title">
+
+                            Mulheres que Correm com os lobos
+
+                        </h5>
+
+
+                        <p class="author">
+
+                            Clarissa Pinkola Estés
+
+                        </p>
+
+
+                        <p class="mb-1">
+
+                            <span class="old-price">
+
+                                R$ 159,99
+
+                            </span>
+
+                        </p>
+
+
+                        <p class="price">
+
+                            R$ 116,16
+
+                        </p>
+
+
+                        <button
+                            class="btn btn-success w-100">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LIVRO 02 -->
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="card book-card h-100 shadow-sm">
+
+
+                    <a href="constituicao_88.html">
+
+                        <img
+                            src="C:\SENAC\python_senac_2026.1\python-uc2\_Projeto_final-2026.01\img\Livros\constituicao_88.jfif"
+                            class="card-img-top"
+                            alt="Constituição 1988">
+
+                    </a>
+
+
+                    <div class="card-body">
+
+                        <div class="stars mb-2">
+
+                            ★★★★★
+
+                            <small class="text-muted">
+                                (95)
+                            </small>
+
+                        </div>
+
+
+                        <h5 class="book-title">
+
+                            Constituição Brasileira de 1988
+
+                        </h5>
+
+
+                        <p class="author">
+
+                            Assembleia Nacional Constituinte
+
+                        </p>
+
+                        <p class="mb-1">
+
+                            <span class="old-price">
+
+                                R$ 56,00
+
+                            </span>
+
+                        </p>
+
+
+                        <p class="price">
+
+                            R$ 49,90
+
+                        </p>
+
+
+                        <button
+                            class="btn btn-success w-100">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LIVRO 03 -->
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="card book-card h-100 shadow-sm">
+
+
+                    <a href="produto.html">
+
+                        <img
+                            src="C:\SENAC\python_senac_2026.1\python-uc2\_Projeto_final-2026.01\img\Livros\voto_feminino.jpg"
+                            class="card-img-top"
+                            alt="As filhas de Eva querem votar">
+
+                    </a>
+
+
+                    <div class="card-body">
+
+                        <div class="stars mb-2">
+
+                            ★★★★☆
+
+                            <small class="text-muted">
+                                (76)
+                            </small>
+
+                        </div>
+
+
+                        <h5 class="book-title">
+
+                            As filhas de Eva querem votar: uma história da conquista do sufrágio feminino no Brasil
+
+                        </h5>
+
+
+                        <p class="author">
+
+                            Mônica Karawejczyk
+
+                        </p>
+
+                      
+                        </p>
+
+
+                        <p class="price">
+
+                            R$ 79,52
+
+                        </p>
+
+
+                        <button
+                            class="btn btn-success w-100">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LIVRO 04 -->
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="card book-card h-100 shadow-sm">
+
+
+                    <a href="produto.html">
+
+                        <img
+                            src="C:\SENAC\python_senac_2026.1\python-uc2\_Projeto_final-2026.01\img\Livros\movimentos_sociais.jfif"
+                            class="card-img-top"
+                            alt="Movimentos Sociais e Políticas Públicas">
+
+                    </a>
+
+
+                    <div class="card-body">
+
+                        <div class="stars mb-2">
+
+                            ★★★★★
+
+                            <small class="text-muted">
+                                (214)
+                            </small>
+
+                        </div>
+
+
+                        <h5 class="book-title">
+
+                            Movimentos Sociais e Políticas Públicas
+
+                        </h5>
+
+
+                        <p class="author">
+
+                            Luciana Tatagiba e Ana Claudia C. Teixeira
+
+                        </p>
+
+
+                        <p class="mb-1">
+
+                            <span class="old-price">
+
+                                R$ 54,90
+
+                            </span>
+
+                        </p>
+
+
+                        <p class="price">
+
+                            R$ 37,90
+
+                        </p>
+
+
+                        <button
+                            class="btn btn-success w-100">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- PROMOÇÃO -->
+<!-- ===================================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="promotion p-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-8">
+
+                    <span class="badge bg-warning text-dark mb-3">
+
+                        OFERTA ESPECIAL
+
+                    </span>
+
+
+                    <h2>
+
+                        Leve 3 livros e ganhe 20% de desconto
+
+                    </h2>
+
+
+                    <p class="mb-0">
+
+                        Escolha seus livros favoritos e aproveite
+                        nossa promoção especial.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+
+                    <a href="promocoes.html"
+                        class="btn btn-warning btn-lg">
+
+                        Aproveitar oferta
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- RECOMENDADOS -->
+<!-- ===================================================== -->
+
+<section class="py-5 bg-white">
+
+    <div class="container">
+
+        <h2 class="mb-2">
+
+            Recomendados para você
+
+        </h2>
+
+        <p class="text-muted mb-4">
+
+            Livros selecionados para despertar sua curiosidade.
+
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-lightbulb fs-1 text-warning mb-3"></i>
+
+                        <h4>
+
+                            Quer aprender algo novo?
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Encontre livros de tecnologia,
+                            negócios, ciência e desenvolvimento pessoal.
+
+                        </p>
+
+                        <a href="categoria-educacao.html"
+                            class="btn btn-outline-dark">
+
+                            Explorar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-heart fs-1 text-danger mb-3"></i>
+
+                        <h4>
+
+                            Procurando romance?
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Histórias emocionantes para
+                            acompanhar seus momentos especiais.
+
+                        </p>
+
+                        <a href="categoria-romance.html"
+                            class="btn btn-outline-dark">
+
+                            Explorar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-wand-magic-sparkles fs-1 text-primary mb-3"></i>
+
+                        <h4>
+
+                            Não sabe o que escolher?
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Responda algumas perguntas e descubra
+                            qual livro combina com você.
+
+                        </p>
+
+                        <a href="quiz.html"
+                            class="btn btn-outline-dark">
+
+                            Fazer o teste
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- NEWSLETTER -->
+<!-- ===================================================== -->
+
+<section class="newsletter py-5">
+
+    <div class="container text-center">
+
+        <i class="fa-regular fa-envelope fs-1 mb-3"></i>
+
+
+        <h2>
+
+            Receba novidades da BookMaker
+
+        </h2>
+
+
+        <p>
+
+            Cadastre seu e-mail e receba lançamentos,
+            promoções e recomendações de livros.
+
+        </p>
+
+
+        <form class="row justify-content-center g-2">
+
+            <div class="col-md-5">
+
+                <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Seu melhor e-mail"
+                    required>
+
+            </div>
+
+
+            <div class="col-md-auto">
+
+                <button
+                    type="submit"
+                    class="btn btn-dark">
+
+                    Quero receber
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="bg-dark text-white">
+
+    <div class="container py-5">
+
+        <div class="row">
+
+
+            <!-- Sobre -->
+
+            <div class="col-md-4 mb-4">
+
+                <h4>
+
+                    <i class="fa-solid fa-book-open text-warning"></i>
+
+                    BookMaker
+
+                </h4>
+
+                <p class="text-secondary">
+
+                    Sua livraria online para descobrir
+                    histórias, conhecimento e novos mundos.
+
+                </p>
+
+            </div>
+
+
+            <!-- Links -->
+
+            <div class="col-md-2 mb-4">
+
+                <h6>
+
+                    Navegação
+
+                </h6>
+
+                <nav class="nav flex-column">
+
+                    <a class="nav-link text-white px-0"
+                        href="index.html">
+
+                        Início
+
+                    </a>
+
+                    <a class="nav-link text-white px-0"
+                        href="produtos-list.html">
+
+                        Livros
+
+                    </a>
+
+                    <a class="nav-link text-white px-0"
+                        href="promocoes.html">
+
+                        Promoções
+
+                    </a>
+
+                    <a class="nav-link text-white px-0"
+                        href="blog.html">
+
+                        Blog
+
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- Atendimento -->
+
+            <div class="col-md-3 mb-4">
+
+                <h6>
+
+                    Atendimento
+
+                </h6>
+
+                <p class="mb-2">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +55 (24) 2233-4455
+
+                </p>
+
+                <p class="mb-2">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    contato@bookmaker.com.br
+
+                </p>
+
+                <a href="contato.html"
+                    class="text-white">
+
+                    Fale conosco
+
+                </a>
+
+            </div>
+
+
+            <!-- Redes sociais -->
+
+            <div class="col-md-3 text-md-end">
+
+                <h6>
+
+                    Siga-nos
+
+                </h6>
+
+
+                <a href="#"
+                    class="btn btn-outline-light btn-sm me-1">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+
+                <a href="#"
+                    class="btn btn-outline-light btn-sm me-1">
+
+                    <i class="fa-brands fa-facebook"></i>
+
+                </a>
+
+
+                <a href="#"
+                    class="btn btn-outline-light btn-sm me-1">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+
+                <a href="#"
+                    class="btn btn-outline-light btn-sm">
+
+                    <i class="fa-brands fa-tiktok"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <hr class="border-secondary">
+
+
+        <div class="row align-items-center">
+
+
+            <!-- Idioma -->
+
+            <div class="col-md-2 mb-3 mb-md-0">
+
+                <select
+                    class="form-select form-select-sm bg-dark text-white border-secondary">
+
+                    <option>Português</option>
+
+                    <option>English</option>
+
+                    <option>Español</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Moeda -->
+
+            <div class="col-md-2 mb-3 mb-md-0">
+
+                <select
+                    class="form-select form-select-sm bg-dark text-white border-secondary">
+
+                    <option>R$ Real</option>
+
+                    <option>US$ Dólar</option>
+
+                    <option>€ Euro</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Direitos -->
+
+            <div class="col-md-8 text-md-end">
+
+                <a href="termos.html"
+                    class="text-white me-2">
+
+                    Termos e condições
+
+                </a>
+
+                <span class="text-secondary">|</span>
+
+                <a href="privacidade.html"
+                    class="text-white mx-2">
+
+                    Privacidade
+
+                </a>
+
+                <span class="text-secondary">|</span>
+
+                <span class="text-secondary">
+
+                    © 2026 BookMaker
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- BOOTSTRAP JS -->
+<!-- ===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>
