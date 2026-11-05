@@ -16,3 +16,11 @@ urlpatterns = [
     # <int:pk> captura um número inteiro e o envia à view como parâmetro 'pk'
     #path("receita/<int:pk>/",views.detalhe_receita,name="detalhe_receita",),
 ]
+
+# receitas/urls.py
+
+path(
+    "receita/<slug:slug>/",
+    views.detalhe_receita,
+    name="detalhe_receita",
+),

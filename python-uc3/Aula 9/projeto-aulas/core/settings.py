@@ -43,7 +43,9 @@ INSTALLED_APPS = [
 
     'apps.paginas', # Aplicação de páginas estáticas
     'receitas', # Nossa aplicação de receitas
+    'django_select2',   # ... outras aplicações ...
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

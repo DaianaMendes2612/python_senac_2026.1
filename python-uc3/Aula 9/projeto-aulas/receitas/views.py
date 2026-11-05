@@ -40,3 +40,18 @@ def detalhe_receita(request, pk):
     }
 
     return render(request, "receitas/detalhe.html", context)
+
+# receitas/views.py
+
+def detalhe_receita(request, slug):
+    receita = get_object_or_404(
+        Receita,
+        slug=slug,
+        publicada=True,
+    )
+
+    return render(
+        request,
+        "receitas/detalhe.html",
+        {"receita": receita},
+    )
