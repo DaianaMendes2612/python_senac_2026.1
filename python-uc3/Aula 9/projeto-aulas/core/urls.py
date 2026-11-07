@@ -36,7 +36,6 @@ if settings.DEBUG:
 
     # config/urls.py
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
 
